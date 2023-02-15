@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { Experience } from "typings";
 import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
-import { fetchExperiences } from "utils/fetchExperiences";
 import { BoltIcon } from "@heroicons/react/24/solid";
 
 function urlFor(source: any) {
@@ -33,8 +32,8 @@ function ExperienceCard({ experience }: Props) {
     <div>
       <article
         className={`flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[600px] snap-center bg-[#313548] p-10 hover:opacity-100 ${
-          isMostRecent ? "opacity-100" : "opacity-40"
-        } cursor-pointer transition-opacity duration-200 overflow-hidden h-[700px] overflow-y-scroll scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#ea5c1f]/30`}
+          isMostRecent ? "opacity-100" : "sm:opacity-40"
+        } cursor-pointer transition-opacity duration-200 overflow-hidden h-[45rem] sm:h-[700px] overflow-y-scroll scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#ea5c1f]/30`}
       >
         <motion.img
           initial={{ y: -100, opacity: 0 }}
@@ -43,17 +42,17 @@ function ExperienceCard({ experience }: Props) {
           viewport={{ once: true }}
           src={urlFor(experience?.companyImage.asset._ref).url()}
           alt="qflow-image"
-          className="w-32 h-32 rounded-full md:rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
+          className="w-20 h-20 sm:w-32 sm:h-32 rounded-full md:rounded-full xl:w-[100px] xl:h-[100px] object-cover object-center"
         ></motion.img>
         <div className="px-0 md:px-10s">
-          <h4 className="text-4xl font-light">
+          <h4 className="text-l sm:text-4xl font-light">
             {experience.jobTitle} &nbsp;&nbsp;&nbsp;
             <span>
               {experience.mostRecent === true ? (
                 <BoltIcon
                   onMouseEnter={onMouseEnter}
                   onMouseLeave={onMouseLeave}
-                  className="h-[30px] w-[30px] inline-block text-yellow-500"
+                  className="h-[30px] w-[30px] inline-block text-yellow-500 animate-[spin_1s_ease-in-out_1]"
                 />
               ) : (
                 ""
@@ -67,26 +66,28 @@ function ExperienceCard({ experience }: Props) {
               ""
             )}
           </h4>
-          <p className="font-bold text-2xl mt-1">{experience.company}</p>
+          <p className="font-bold text-m sm:text-2xl mt-1">
+            {experience.company}
+          </p>
 
           <div className="flex space-x-2 my-2">
             {experience.technologies?.map((exp) => (
               <img
                 key={exp._id}
-                className="h-10 w-10 rounded-full object-cover"
+                className="h-5 w-5 sm:h-10 sm:w-10 rounded-full object-cover"
                 src={urlFor(exp.image.asset._ref).url()}
                 alt=""
               />
             ))}
           </div>
 
-          <p className="uppercase py-5 text-gray-300">
+          <p className="uppercase py-5 text-gray-300 text-sm sm:text-lg">
             {new Date(experience.dateStarted).toDateString()} -{" "}
             {experience.isCurrentlyWorkingHere
               ? "Present"
               : new Date(experience.dateEnded).toDateString()}
           </p>
-          <ul className="list-disc space-y-4 ml-5 text-lg h-80 w-60">
+          <ul className="list-disc space-y-4 ml-5 text-[0.60rem] sm:text-lg h-80 w-60">
             {experience.points.map((point, i) => (
               <li key={i}>{point}</li>
             ))}

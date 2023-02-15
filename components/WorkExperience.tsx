@@ -23,7 +23,7 @@ function WorkExperience({ experiences }: Props) {
           experience
         </h3>
         <a
-          className="absolute top-24 uppercase tracking-[10px] text-gray-500 text-sm invisible sm:visible cursor-pointer animate-pulse"
+          className="absolute top-24 uppercase tracking-[10px] text-white-500 text-sm invisible sm:visible cursor-pointer animate-pulse"
           id="cvLink"
           href="https://emerald-oona-32.tiiny.site/"
           target={"_blank"}
@@ -31,7 +31,7 @@ function WorkExperience({ experiences }: Props) {
         >
           click to view cv
         </a>
-        <div className="w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#ea5c1f]/30">
+        <div className="max-h-30 w-full flex space-x-5 p-10 snap-x snap-mandatory scrollbar-thin sm:scrollbar-track-transparent sm:scrollbar-thumb-[#ea5c1f]/30">
           {experiences?.map((experience) => (
             <ExperienceCard experience={experience} key={experience._id} />
           ))}
