@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": ["**/*.ts", "**/*.tsx", "schemas/experience.js", "schemas/pageInfo.js", "schemas/project.js", "schemas/skill.js", "schemas/social.js"],
   "exclude": ["node_modules"]
 }
