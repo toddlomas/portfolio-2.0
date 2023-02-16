@@ -32,7 +32,7 @@ function Projects({ projects }: Props) {
         transition={{ duration: 1.5 }}
         className="h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0 "
       >
-        <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl invisible sm:visible">
+        <h3 className="absolute top-10 uppercase tracking-[0px] sm:tracking-[20px] text-gray-500 text-sm md:text-2xl mx-auto">
           Projects & Courses
         </h3>
 
@@ -40,12 +40,12 @@ function Projects({ projects }: Props) {
           {projects.map((project: any, i: any) => (
             <div
               key={project}
-              className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center p-20 md:p-44 h-screen"
+              className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center p-20 md:p-30 h-screen"
             >
               <motion.img
-                className="sm:h-[300px] sm:w-[500px] h-[100px] w-[300px]"
+                className="sm:h-[300px] sm:w-[500px] h-[9rem] w-[13rem]"
                 initial={{
-                  y: -300,
+                  y: -100,
                   opacity: 0,
                 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -55,17 +55,20 @@ function Projects({ projects }: Props) {
                 alt=""
               />
               <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-                <h4 className="text-4xl font-semibold text-center">
-                  <span className="underline decoration-[#ea5c1f]/50">
+                <h4 className="text-xl md:text-3xl font-light sm:font-semibold text-center mt-10">
+                  <span className="text-gray-300">
                     Case study {i + 1} of {projects.length}
                   </span>
-                  : {project.title}
+                  : <br />
+                  <span className="tracking-[0.3rem] text-[#ea5c1f]">
+                    {project.title}
+                  </span>
                 </h4>
                 <div className="flex items-center space-x-2 justify-center object-cover">
                   {project?.technologies
                     .map((technology: any) => (
                       <img
-                        className="h-10 w-10"
+                        className="h-10 w-10 sm:h-10 sm:w-10"
                         src={urlFor(technology?.image).url()}
                         alt=""
                         key={technology._id}
@@ -79,7 +82,7 @@ function Projects({ projects }: Props) {
                     <span className="italic">
                       Check it out :{" "}
                       <a
-                        className="underline text-blue-600"
+                        className="underline text-blue-400"
                         href={project?.linkToBuild}
                       >
                         {project.title}

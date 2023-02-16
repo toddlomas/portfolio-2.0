@@ -31,7 +31,7 @@ function WorkExperience({ experiences }: Props) {
         >
           click to view cv
         </a>
-        <div className="max-h-30 w-full flex space-x-5 p-10 snap-x snap-mandatory scrollbar-thin sm:scrollbar-track-transparent sm:scrollbar-thumb-[#ea5c1f]/30">
+        <div className="max-h-30 w-full flex space-x-5 p-10 snap-x snap-mandatory scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#ea5c1f]/30">
           {experiences?.map((experience) => (
             <ExperienceCard experience={experience} key={experience._id} />
           ))}

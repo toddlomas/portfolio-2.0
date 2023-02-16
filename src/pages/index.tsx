@@ -34,7 +34,7 @@ export default function Home({
 }: Props) {
   return (
     <motion.div
-      className="bg-[#2d3142] text-white h-screen snap-y snap-mandatory overflow-x-hidden z-0 overflow-y-scroll 
+      className="bg-[#2d3142] text-white h-screen sm:snap-y sm:snap-mandatory overflow-x-hidden z-0 overflow-y-scroll 
   scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#ea5c1f]/80"
     >
       <Head>

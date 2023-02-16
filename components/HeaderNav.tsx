@@ -7,7 +7,7 @@ function HeaderNav({}: Props) {
   return (
     <header
       className="sticky top-0 p-5 flex items-start justify-evenly max-w-3xl z-20 xl:items-center 
-    flex-col text-center md:text-left px-10 mx-auto xs:hidden md:max-w-l h-0 sm:h-40 invisible sm:visible"
+    flex-col text-center md:text-left px-10 mx-auto md:max-w-l h-0 sm:h-20 invisible md:visible"
     >
       <motion.div
         initial={{
