@@ -30,7 +30,7 @@ function Header({ socials }: Props) {
         >
           {/* Social Icons */}
 
-          {socials.map((social: any) => (
+          {socials?.map((social: any) => (
             <SocialIcon
               className="cursor-pointer text-[#ea5c1f] rounded-full filter grayscale hover:grayscale-0"
               fgColor="#ea5c1f"

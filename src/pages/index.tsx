@@ -15,7 +15,6 @@ import { fetchProjects } from "utils/fetchProjects";
 import { fetchSocials } from "utils/fetchSocials";
 import { fetchSkills } from "utils/fetchSkills";
 import { fetchExperiences } from "utils/fetchExperiences";
-import social from "sanity/schemas/social";
 
 type Props = {
   pageInfo: PageInfo;
