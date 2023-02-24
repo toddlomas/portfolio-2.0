@@ -45,7 +45,7 @@ function ExperienceCard({ experience }: Props) {
           className="w-20 h-20 sm:w-32 sm:h-32 rounded-full md:rounded-full xl:w-[100px] xl:h-[100px] object-cover object-center"
         ></motion.img>
         <div className="px-0 md:px-10s">
-          <h4 className="text-l sm:text-4xl font-light">
+          <h4 className="text-l sm:text-4xl font-extralight">
             {experience?.jobTitle} &nbsp;&nbsp;&nbsp;
             <span>
               {experience?.mostRecent === true ? (
@@ -66,7 +66,7 @@ function ExperienceCard({ experience }: Props) {
               ""
             )}
           </h4>
-          <p className="font-bold text-m sm:text-2xl mt-1">
+          <p className="font-bold text-gray-300 text-m sm:text-2xl mt-1">
             {experience?.company}
           </p>
 
@@ -87,7 +87,7 @@ function ExperienceCard({ experience }: Props) {
               ? "Present"
               : new Date(experience.dateEnded).toDateString()}
           </p>
-          <ul className="list-disc space-y-4 ml-5 text-[0.60rem] sm:text-lg h-80 w-60">
+          <ul className="list-disc space-y-4 ml-5 text-[0.60rem] sm:text-lg h-80 w-60 font-thin">
             {experience?.points.map((point, i) => (
               <li key={i}>{point}</li>
             ))}

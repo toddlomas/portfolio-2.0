@@ -10,6 +10,20 @@ type Props = {
 };
 
 function WorkExperience({ experiences }: Props) {
+  const onButtonClick = () => {
+    // using Java Script method to get PDF file
+    fetch("ToddLomas-SoftwareEngineer-CV.pdf").then((response) => {
+      response.blob().then((blob) => {
+        // Creating new object of PDF file
+        const fileURL = window.URL.createObjectURL(blob);
+        // Setting various property values
+        let alink = document.createElement("a");
+        alink.href = fileURL;
+        alink.download = "toddlomas-cv.pdf";
+        alink.click();
+      });
+    });
+  };
   return (
     <Suspense fallback={<h2>Loading...</h2>}>
       <HeaderNav />
@@ -25,11 +39,9 @@ function WorkExperience({ experiences }: Props) {
         <a
           className="absolute top-24 uppercase tracking-[10px] text-white-500 text-sm invisible sm:visible cursor-pointer animate-pulse"
           id="cvLink"
-          href="https://emerald-oona-32.tiiny.site/"
-          target={"_blank"}
-          rel={"noreferrer"}
+          onClick={onButtonClick}
         >
-          click to view cv
+          click to download cv
         </a>
         <div className="max-h-30 w-full flex space-x-5 p-10 snap-x snap-mandatory scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#ea5c1f]/30">
           {experiences?.map((experience) => (

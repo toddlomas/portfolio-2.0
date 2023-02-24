@@ -29,11 +29,11 @@ function Hero() {
       />
 
       <div className="z-20">
-        <h2 className="tracking-[5px] text-sm uppercase text-[#ea5c1f] pb-2 sm:tracking-[15px]">
+        <h2 className="tracking-[10px] text-sm uppercase text-[#ea5c1f] pb-2 sm:tracking-[15px]">
           Software engineer
         </h2>
 
-        <h1 className="md:text-5xl lg:text-6xl font-semibold px-10 xs:text-5xs">
+        <h1 className="md:text-5xl lg:text-6xl font-extralight px-10 xs:text-5xs">
           <span>I&apos;m {text}</span>
           <Cursor cursorColor="#4cc9f0" cursorBlinking />
         </h1>
